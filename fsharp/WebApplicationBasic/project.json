@@ -23,36 +23,28 @@
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
   },
+
   "tools": {
     "BundlerMinifier.Core": "2.0.238",
     "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
-    "dotnet-compile-fsc": "1.0.0-preview2-*",
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
   },
 
   "frameworks": {
     "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.0"
-        },
-        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
-      }
-    }
-  },
-  "buildOptions": {
-    "debugType": "portable",
-    "emitEntryPoint": true,
-    "compilerName": "fsc",
-    "compile": {
-      "includeFiles": [
-        "Startup.fs",
-        "Program.fs"
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
       ]
     }
   },
-    "runtimeOptions": {
+
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+
+  "runtimeOptions": {
     "configProperties": {
       "System.GC.Server": true
     }
