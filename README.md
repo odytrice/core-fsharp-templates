@@ -1,2 +1,2 @@
-# dotnet-templates
-DotNet Core Templates for ASP.NET
+# F# Templates for .NET Core
+F# Templates for DotNet Core. They are translated from the ASP.NET Templates
