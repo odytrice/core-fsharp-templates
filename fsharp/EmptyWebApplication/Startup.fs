@@ -23,7 +23,7 @@ type Startup() =
 
         let myHandler (context:HttpContext) = 
             async {
-                do! context.Response.WriteAsync("Hello World") |> Async.AwaitTask
+                do! context.Response.WriteAsync("Hello World from F#") |> Async.AwaitTask
             }
             |> Async.StartAsTask :> Task
         
