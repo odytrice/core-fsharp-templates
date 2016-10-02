@@ -10,14 +10,14 @@ open Microsoft.AspNetCore.Mvc
 type HomeController() = 
     inherit Controller()
 
-    member this.Index() = View()
+    member this.Index() = this.View()
 
     member this.About() =
         this.ViewData.["Message"] <- "Your application description page."
-        View()
+        this.View()
 
     member this.Contact() =
         this.ViewData.["Message"] <- "Your contact page.";
-        View();
+        this.View();
 
-    member this.Error() = View()
+    member this.Error() = this.View()

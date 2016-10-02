@@ -1,15 +1,14 @@
-open System
-open System.Collections.Generic
-open System.IO
-open System.Linq
-open System.Threading.Tasks
-open Microsoft.AspNetCore.Hosting
-open Microsoft.Extensions.Configuration
-open WebApplicationBasic
+// Learn more about F# at http://fsharp.org
 
+open System
+open System.IO
+open Microsoft.Extensions.Configuration
+open Microsoft.AspNetCore.Hosting
+open WebAPIApplication
 
 [<EntryPoint>]
-let main argv =    
+let main argv =
+    
     let config = ConfigurationBuilder()
                     .AddCommandLine(argv)
                     .AddEnvironmentVariables("ASPNETCORE_")
@@ -22,6 +21,6 @@ let main argv =
                     .UseIISIntegration()
                     .UseStartup<Startup>()
                     .Build()
-
-    host.Run()
-    0
+    host.Run();
+    
+    0 // return an integer exit code
