@@ -1,0 +1,44 @@
+{
+    "version": "1.0.0-*",
+    "testRunner": "mstest",
+    "dependencies": {
+        "dotnet-test-mstest": "1.1.1-preview",
+        "Microsoft.NETCore.App": {
+            "type": "platform",
+            "version": "1.0.0"
+        },
+        "MSTest.TestFramework": "1.0.1-preview"
+    },
+    "frameworks": {
+        "netcoreapp1.0": {
+            "dependencies": {
+                "Microsoft.NETCore.App": {
+                    "type": "platform",
+                    "version": "1.0.0"
+                },
+                "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
+            },
+            "imports": "dnxcore50"
+        }
+    },
+    "tools": {
+        "dotnet-compile-fsc": "1.0.0-preview2-*"
+    },
+    "buildOptions": {
+        "debugType": "portable",
+        "compilerName": "fsc",
+        "compile": {
+            "includeFiles": [
+                "UnitTest1.fs"
+            ]
+        },
+        "copyToOutput": {
+            "include": [
+                "xunit.runner.json"
+            ]
+        }
+    },
+    "tooling": {
+        "defaultNamespace": "UnitTest"
+    }
+}
